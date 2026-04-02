@@ -1,0 +1,10 @@
+langgraph
+langchain
+langchain-community
+langchain-huggingface
+faiss-cpu
+sentence-transformers
+pandas
+streamlit
+cerebras-cloud-sdk
+python-dotenv
