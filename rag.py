@@ -1,0 +1,27 @@
+import pandas as pd
+from langchain_community.vectorstores import FAISS
+from langchain_huggingface import HuggingFaceEmbeddings
+def build_vectorstore():
+    df = pd.read_csv(r"C:\Users\ayush\.cache\kagglehub\datasets\pythonafroz\medquad-medical-question-answer-for-ai-research\versions\1\medquad.csv")
+
+    # normalize column names
+    df.columns = df.columns.str.lower()
+
+    # use small sample (important)
+    df = df.sample(500)
+
+    texts = []
+    for _, row in df.iterrows():
+        question = str(row.get("question", ""))
+        answer = str(row.get("answer", ""))
+
+        text = f"Q: {question} A: {answer}"
+        texts.append(text)
+
+    embeddings = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
+
+    vectorstore = FAISS.from_texts(texts, embeddings)
+
+    return vectorstore
+vs = build_vectorstore()
+print("Vectorstore built successfully")
