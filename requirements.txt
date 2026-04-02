@@ -6,5 +6,5 @@ faiss-cpu
 sentence-transformers==2.2.2
 pandas
 streamlit
-cerebras-cloud-sdk
 python-dotenv
+groq
