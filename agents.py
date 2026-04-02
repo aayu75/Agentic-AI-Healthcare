@@ -8,10 +8,12 @@ from rag import build_vectorstore
 # ------------------------
 load_dotenv()
 
-client = Cerebras(
-    api_key=os.getenv("CEREBRAS_API_KEY")
-)
+from groq import Groq
+import os
 
+client = Groq(
+    api_key=os.getenv("GROQ_API_KEY")
+)
 vectorstore = build_vectorstore()
 
 # ------------------------
@@ -89,8 +91,8 @@ def reasoning_agent(state):
     try:
         response = client.chat.completions.create(
             messages=[{"role": "user", "content": prompt}],
-            model="llama3.1-8b",
-            max_completion_tokens=200
+            model="llama-3.1-8b-instant",   
+            temperature=0.2
         )
 
         diagnosis = response.choices[0].message.content
