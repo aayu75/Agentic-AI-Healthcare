@@ -1,10 +1,8 @@
 langgraph
 langchain
 langchain-community
-langchain-huggingface
 faiss-cpu
-sentence-transformers==2.2.2
-huggingface_hub==0.14.1
+sentence-transformers
 pandas
 streamlit
 python-dotenv
