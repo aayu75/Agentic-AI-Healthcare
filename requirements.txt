@@ -8,3 +8,5 @@ pandas
 streamlit
 cerebras-cloud-sdk
 python-dotenv
+torch
+torchvision
