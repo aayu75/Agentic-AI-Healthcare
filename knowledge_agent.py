@@ -1,14 +1,8 @@
-import kagglehub
 
-# Download latest version
-path ='C:\ds lab7\venv'
-path = kagglehub.dataset_download("pythonafroz/medquad-medical-question-answer-for-ai-research")
-
-print("Path to dataset files:", path )
 
 import pandas as pd
 
-df = pd.read_csv(r"C:\Users\ayush\.cache\kagglehub\datasets\pythonafroz\medquad-medical-question-answer-for-ai-research\versions\1\medquad.csv")
+df = pd.read_csv("medquad.csv")
 
 print(df.columns)
 
