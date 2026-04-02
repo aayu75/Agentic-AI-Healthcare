@@ -3,10 +3,8 @@ langchain
 langchain-community
 langchain-huggingface
 faiss-cpu
-sentence-transformers
+sentence-transformers==2.2.2
 pandas
 streamlit
 cerebras-cloud-sdk
 python-dotenv
-torch
-torchvision
