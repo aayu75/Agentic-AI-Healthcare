@@ -23,5 +23,4 @@ def build_vectorstore():
     vectorstore = FAISS.from_texts(texts, embeddings)
 
     return vectorstore
-vs = build_vectorstore()
 print("Vectorstore built successfully")
