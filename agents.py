@@ -1,4 +1,4 @@
-from cerebras.cloud.sdk import Cerebras
+
 from dotenv import load_dotenv
 import os
 from rag import build_vectorstore
